@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cswcddvodhc38"]
+
+[ext_resource type="Script" path="res://addons/editor-shaved/simple-editor.gd" id="1_4ave7"]
+[ext_resource type="Theme" uid="uid://cpstbeulpubdx" path="res://addons/editor-shaved/theme.tres" id="2_uvmw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jks"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.372549, 0.784314, 0.380392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.705882, 0.909804, 0, 1)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.231373)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[node name="SimpleEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ave7")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is a simple editor."
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_uvmw5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_03jks")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03jks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_03jks")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_03jks")
+theme_override_styles/focus = SubResource("StyleBoxFlat_03jks")
+text = "Back to Godot
+"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
