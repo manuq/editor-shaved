@@ -1,0 +1,228 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq4pfyf8vmsi7"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_u85yf"]
+[ext_resource type="PackedScene" uid="uid://bnuk0ofspq37e" path="res://scenes/entities/avatar.tscn" id="1_winlv"]
+[ext_resource type="PackedScene" uid="uid://ccpcr4l3bk781" path="res://scenes/entities/goal.tscn" id="3_sskx2"]
+[ext_resource type="PackedScene" uid="uid://dqen8mmnfoihi" path="res://scenes/entities/wall.tscn" id="3_yhvai"]
+[ext_resource type="FontFile" uid="uid://cha0313s3rr46" path="res://addons/editor-shaved/assets/Titan_One/TitanOne-Regular.ttf" id="5_xwsj2"]
+[ext_resource type="PackedScene" uid="uid://bqh02801o2nmm" path="res://scenes/entities/flower_item.tscn" id="7_ji2at"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_u85yf")
+metadata/_edit_lock_ = true
+
+[node name="Entities" type="Node2D" parent="."]
+unique_name_in_owner = true
+metadata/_edit_lock_ = true
+
+[node name="Wall" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(50, 400)
+
+[node name="Wall2" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(150, 400)
+
+[node name="Wall3" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(250, 500)
+
+[node name="Wall4" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(150, 500)
+
+[node name="Wall5" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(550, 500)
+
+[node name="Wall6" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(450, 500)
+
+[node name="Wall7" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(650, 400)
+
+[node name="Wall8" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(550, 400)
+
+[node name="Wall9" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(750, 400)
+
+[node name="Wall10" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(650, 200)
+
+[node name="Wall11" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(750, 200)
+
+[node name="Wall12" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(950, 400)
+
+[node name="Wall13" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(850, 400)
+
+[node name="Wall14" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(850, 200)
+
+[node name="Wall15" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1050, 0)
+
+[node name="Wall16" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(650, 100)
+
+[node name="Wall17" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(650, 0)
+
+[node name="Wall18" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(850, 0)
+
+[node name="Wall19" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(950, 0)
+
+[node name="Wall20" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(750, 0)
+
+[node name="Wall21" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1050, 600)
+
+[node name="Wall22" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 600)
+
+[node name="Wall23" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 500)
+
+[node name="Goal2" parent="Entities" instance=ExtResource("3_sskx2")]
+position = Vector2(850, 500)
+
+[node name="Goal3" parent="Entities" instance=ExtResource("3_sskx2")]
+position = Vector2(650, 500)
+
+[node name="Wall24" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(950, 600)
+
+[node name="Wall25" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(850, 600)
+
+[node name="Wall26" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(750, 600)
+
+[node name="Wall27" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(650, 600)
+
+[node name="FlowerItem2" parent="Entities" instance=ExtResource("7_ji2at")]
+position = Vector2(450, 400)
+
+[node name="FlowerItem3" parent="Entities" instance=ExtResource("7_ji2at")]
+position = Vector2(750, 100)
+
+[node name="FlowerItem" parent="Entities" instance=ExtResource("7_ji2at")]
+position = Vector2(250, 400)
+
+[node name="Wall28" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 0)
+
+[node name="Wall29" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 100)
+
+[node name="Wall30" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 200)
+
+[node name="Wall31" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 300)
+
+[node name="Wall32" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(1150, 400)
+
+[node name="Goal4" parent="Entities" instance=ExtResource("3_sskx2")]
+position = Vector2(750, 500)
+
+[node name="Wall33" parent="Entities" instance=ExtResource("3_yhvai")]
+position = Vector2(550, 600)
+
+[node name="Avatar" parent="Entities" instance=ExtResource("1_winlv")]
+position = Vector2(150, 150)
+
+[node name="EndLayer" type="CanvasLayer" parent="."]
+
+[node name="Win" type="Node2D" parent="EndLayer"]
+unique_name_in_owner = true
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="EndLayer/Win"]
+offset_right = 1100.0
+offset_bottom = 600.0
+color = Color(1, 0.960784, 0.27451, 0.690196)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="EndLayer/Win"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 495.0
+offset_top = 265.0
+offset_right = 591.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("5_xwsj2")
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN!"
+metadata/_edit_lock_ = true
+
+[node name="GameOver" type="Node2D" parent="EndLayer"]
+unique_name_in_owner = true
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="EndLayer/GameOver"]
+offset_right = 1100.0
+offset_bottom = 600.0
+color = Color(0.219608, 0, 0.0352941, 0.666667)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="EndLayer/GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 495.0
+offset_top = 265.0
+offset_right = 591.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
+theme_override_fonts/font = ExtResource("5_xwsj2")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+metadata/_edit_lock_ = true
+
+[node name="ForegroundLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="ForegroundLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_right = 146.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
+theme_override_fonts/font = ExtResource("5_xwsj2")
+theme_override_font_sizes/font_size = 50
+text = "TIME"
+metadata/_edit_lock_ = true
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer"]
+offset_right = 1100.0
+offset_bottom = 600.0
+color = Color(0.203922, 0.180392, 0.25098, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true

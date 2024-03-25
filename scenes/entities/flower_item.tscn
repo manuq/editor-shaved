@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqh02801o2nmm"]
+
+[ext_resource type="Script" path="res://scenes/entities/flower_item.gd" id="1_3e6le"]
+[ext_resource type="Texture2D" uid="uid://d3cylgf0w6yv2" path="res://assets/flower-particle.png" id="2_pq7k5"]
+[ext_resource type="Texture2D" uid="uid://dc8pqr45rf4qk" path="res://assets/flower.png" id="3_7pibb"]
+[ext_resource type="Shader" path="res://scenes/entities/goal.gdshader" id="3_mjinl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftqfm"]
+size = Vector2(100, 100)
+
+[sub_resource type="Curve" id="Curve_038ao"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748571, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r3enr"]
+curve = SubResource("Curve_038ao")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_826xf"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_r3enr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvrcw"]
+shader = ExtResource("3_mjinl")
+shader_parameter/displace_x = 0.0
+shader_parameter/displace_y = 0.0
+
+[node name="FlowerItem" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_3e6le")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.680029, 0.680029)
+shape = SubResource("RectangleShape2D_ftqfm")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_826xf")
+texture = ExtResource("2_pq7k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tvrcw")
+scale = Vector2(0.183876, 0.183876)
+texture = ExtResource("3_7pibb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

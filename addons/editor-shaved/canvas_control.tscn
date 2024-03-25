@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://brss1h0hug5ey"]
+
+[ext_resource type="Theme" uid="uid://cpstbeulpubdx" path="res://addons/editor-shaved/theme.tres" id="1_idr2c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_idr2c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "hola!"

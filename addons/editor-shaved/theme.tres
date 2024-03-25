@@ -1,22 +1,100 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cpstbeulpubdx"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cpstbeulpubdx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jks"]
-content_margin_left = 20.0
-content_margin_right = 20.0
-bg_color = Color(0.380392, 0.8, 0.388235, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.705882, 0.909804, 0, 1)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.231373)
-shadow_size = 5
-shadow_offset = Vector2(0, 2)
+[ext_resource type="FontFile" uid="uid://cha0313s3rr46" path="res://addons/editor-shaved/assets/Titan_One/TitanOne-Regular.ttf" id="1_e8ird"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlmv6"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.494118, 0.686275, 0.741176, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o52bd"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.109804, 0.32549, 0.513726, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86kuk"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0.698039, 0.890196, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwfeo"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.333333, 0.819608, 0.980392, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb0wf"]
+bg_color = Color(0.592157, 0.760784, 1, 0.427451)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l24mk"]
+bg_color = Color(0.847059, 0.803922, 0.741176, 1)
 
 [resource]
-/styles/green = SubResource("StyleBoxFlat_03jks")
+default_base_scale = 2.0
+default_font = ExtResource("1_e8ird")
+default_font_size = 24
+Button/colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+Button/colors/font_disabled_color = Color(0.137255, 0.137255, 0.137255, 0.772549)
+Button/colors/font_focus_color = Color(0.137255, 0.137255, 0.137255, 1)
+Button/colors/font_hover_color = Color(0.137255, 0.137255, 0.137255, 1)
+Button/colors/font_hover_pressed_color = Color(0.137255, 0.137255, 0.137255, 1)
+Button/colors/font_pressed_color = Color(0.941176, 0.913725, 0.921569, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_vlmv6")
+Button/styles/focus = SubResource("StyleBoxFlat_o52bd")
+Button/styles/hover = SubResource("StyleBoxFlat_86kuk")
+Button/styles/normal = SubResource("StyleBoxFlat_86kuk")
+Button/styles/pressed = SubResource("StyleBoxFlat_o52bd")
+FlatButton/styles/disabled = SubResource("StyleBoxFlat_gwfeo")
+FlatButton/styles/hover = SubResource("StyleBoxFlat_gwfeo")
+FlatButton/styles/normal = SubResource("StyleBoxFlat_gwfeo")
+FlatButton/styles/pressed = SubResource("StyleBoxFlat_gwfeo")
+Label/colors/font_color = Color(0.219608, 0.219608, 0.219608, 1)
+Label/colors/font_outline_color = Color(1, 0.878431, 0.85098, 1)
+Label/colors/font_shadow_color = Color(0.968627, 0.792157, 0.756863, 0.372549)
+LineEdit/colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+LineEdit/colors/font_placeholder_color = Color(0.137255, 0.137255, 0.137255, 0.643137)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_lb0wf")
+Panel/styles/panel = SubResource("StyleBoxFlat_l24mk")

@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccpcr4l3bk781"]
+
+[ext_resource type="Script" path="res://scenes/entities/goal.gd" id="1_ev25o"]
+[ext_resource type="Texture2D" uid="uid://dbsjbe4d037in" path="res://assets/goal-back.png" id="1_t3xjj"]
+[ext_resource type="Texture2D" uid="uid://rlsgbhkwi6vn" path="res://assets/goal-front.png" id="2_oe8ri"]
+[ext_resource type="Shader" path="res://scenes/entities/goal.gdshader" id="2_vbini"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftqfm"]
+size = Vector2(100, 100)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvrcw"]
+shader = ExtResource("2_vbini")
+shader_parameter/displace_x = 0.0
+shader_parameter/displace_y = 0.0
+
+[sub_resource type="Animation" id="Animation_7cssq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/displace_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:material:shader_parameter/displace_y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v6qav"]
+resource_name = "default"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/displace_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.1, 5),
+"transitions": PackedFloat32Array(1, -2, -2),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:material:shader_parameter/displace_y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.1, 5),
+"transitions": PackedFloat32Array(1, -2, -2),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a40km"]
+_data = {
+"RESET": SubResource("Animation_7cssq"),
+"default": SubResource("Animation_v6qav")
+}
+
+[node name="Goal" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_ev25o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ftqfm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.183876, 0.183876)
+texture = ExtResource("1_t3xjj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tvrcw")
+scale = Vector2(0.183876, 0.183876)
+texture = ExtResource("2_oe8ri")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a40km")
+}
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

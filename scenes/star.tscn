@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpk7ycijf55m8"]
+
+[ext_resource type="Texture2D" uid="uid://rlsgbhkwi6vn" path="res://assets/goal-front.png" id="1_7iag4"]
+
+[sub_resource type="Animation" id="Animation_7cfei"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(300, 121.97, 316, 189.97, 394, 186.97, 418, 243.97, 348, 293.97, 373, 353.97, 327, 394.97, 264, 352.97, 191, 393.97, 154, 368.97, 170, 290.97, 118, 234.97, 135, 189.97, 211, 189.97, 250, 121.97)]
+}
+
+[sub_resource type="Animation" id="Animation_vfmcm"]
+resource_name = "hello"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(300, 121.97, 316, 189.97, 394, 186.97, 418, 243.97, 348, 293.97, 373, 353.97, 327, 394.97, 264, 352.97, 191, 393.97, 154, 368.97, 170, 290.97, 118, 234.97, 135, 189.97, 211, 189.97, 250, 121.97), PackedVector2Array(297, 138, 303, 202, 384, 194, 408, 246, 333, 292, 365, 348, 322, 392, 258, 345, 198, 384, 162, 362, 191, 289, 105, 263, 117, 212, 188, 202, 246, 135), PackedVector2Array(305, 133, 321, 214, 400, 219, 416, 278, 345, 300, 370, 353, 322, 388, 272, 349, 191, 393.97, 154, 368.97, 171, 278, 117, 215, 150, 169, 213, 212, 255, 130), PackedVector2Array(300, 121.97, 316, 189.97, 394, 186.97, 418, 243.97, 348, 293.97, 373, 353.97, 327, 394.97, 264, 352.97, 191, 393.97, 154, 368.97, 170, 290.97, 118, 234.97, 135, 189.97, 211, 189.97, 250, 121.97)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yluw5"]
+_data = {
+"RESET": SubResource("Animation_7cfei"),
+"hello": SubResource("Animation_vfmcm")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(260, 263)
+offset = Vector2(-260, -263)
+texture = ExtResource("1_7iag4")
+polygon = PackedVector2Array(300, 121.97, 316, 189.97, 394, 186.97, 418, 243.97, 348, 293.97, 373, 353.97, 327, 394.97, 264, 352.97, 191, 393.97, 154, 368.97, 170, 290.97, 118, 234.97, 135, 189.97, 211, 189.97, 250, 121.97)
+uv = PackedVector2Array(300, 121.97, 316, 189.97, 394, 186.97, 418, 243.97, 348, 293.97, 373, 353.97, 327, 394.97, 264, 352.97, 191, 393.97, 154, 368.97, 170, 290.97, 118, 234.97, 135, 189.97, 211, 189.97, 250, 121.97)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yluw5")
+}
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(17, 108)
+gizmo_extents = 39.0
