@@ -18,7 +18,7 @@ const DEFAULT_GRAVITY: float = 980.0
 
 var editor_interface_access: EditorInterfaceAccess = null
 
-var _simple_editor: SimpleEditor = null
+var _simple_editor: Control = null
 var _button_top_bar: Button = null
 var _godot_editor: Control = null
 var _canvas_control: Control = null

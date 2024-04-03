@@ -1,7 +1,5 @@
 @tool
 extends Control
-class_name SimpleEditor
-
 
 signal show_godot_editor
 signal play
